@@ -1,0 +1,218 @@
+/* === Base Styling === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* === LIGHT THEME === */
+body.light-theme {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --text-small: #0f172a;
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --footer-bg: #e2e8f0;
+  --card-bg: #f8fafc;
+  --border: #cbd5e1;
+  --input-bg: #ffffff;
+  --input-text: #ffffff;
+  --button-bg: #0284c7;
+  --button-text: #ffffff;
+  --button-hover: #0369a1;
+  --accent: #0369a1;
+  --muted-text: #ffffff;
+  --section-bg: #f9fafb;
+  --grid-bg: ;
+}
+
+/* === DARK THEME === */
+body.dark-theme {
+  --bg: #0b1120;
+  --text: #e2e8f0;
+  --header-bg: rgba(15, 23, 42, 0.85);
+  --footer-bg: #0f172a;
+  --card-bg: #1e293b;
+  --border: #334155;
+  --input-bg: #1e293b;
+  --input-text: #e2e8f0;
+  --button-bg: #38bdf8;
+  --button-text: #0f172a;
+  --button-hover: #67e8f9;
+  --accent: #38bdf8;
+  --section-bg: #1e293b;
+}
+
+/* === App Layout === */
+.app {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* === Header === */
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--header-bg);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--accent);
+  z-index: 100;
+  transition: background 0.4s ease, border 0.4s ease;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+header button {
+  border: none;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+header button:hover {
+  background: var(--button-hover);
+  transform: scale(1.05);
+}
+
+/* === Buttons inside the site === */
+button,
+a.button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* === Card / Project Boxes === */
+.project-card,
+.card {
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* === Inputs / Textareas === */
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  color: var(--input-text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+/* === Footer === */
+footer {
+  background: var(--footer-bg);
+  color: var(--text);
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid var(--accent);
+  transition: background 0.5s ease;
+}
+
+/* === Section Containers === */
+section {
+  background: transparent;
+  margin-bottom: 5rem;
+  transition: background 0.5s, color 0.5s;
+}
+
+.main-content {
+  padding: 5rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* === Responsive Fixes === */
+@media (max-width: 1024px) {
+  header {
+    padding: 0.75rem 1rem;
+  }
+  .main-content {
+    padding: 4rem 1rem;
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  header h1 {
+    font-size: 1.25rem;
+  }
+  .main-content {
+    padding: 3rem 1rem;
+  }
+  button,
+  a.button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  header {
+    text-align: center;
+  }
+  section {
+    padding: 1rem 0;
+  }
+  footer {
+    font-size: 0.8rem;
+  }
+}
+/* ✅ Paragraph & muted text fix */
+.lightcolor {
+  color: var(--muted-text) !important;
+}
+
+.text-gray-700 {
+  color: var(--text) !important;
+}

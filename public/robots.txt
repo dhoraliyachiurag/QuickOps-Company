@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chiragdhoraliya.vercel.app/sitemap.xml
